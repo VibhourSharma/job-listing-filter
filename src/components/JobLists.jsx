@@ -1,13 +1,16 @@
 import data from "../../data";
+import JobCard from "./JobCard";
 console.log(data);
 
-const JobLists = () => {
+const JobLists = ({ setKeywords }) => {
   return (
-    <div className="jobs">
-      {data.map((d) => (
-        <div>{d.company}</div>
-      ))}
-    </div>
+    <>
+      <div className="jobs">
+        {data.map((d) => (
+          <JobCard data={d} setKeywords={setKeywords} />
+        ))}
+      </div>
+    </>
   );
 };
 
