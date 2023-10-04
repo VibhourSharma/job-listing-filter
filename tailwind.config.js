@@ -10,6 +10,9 @@ export default {
         darkgreyish: "hsl(180, 8%, 52%)",
         verydark: "hsl(180, 14%, 20%)",
       },
+      boxShadow: {
+        custom: "0px 4px 6px 4px rgba(91, 164, 164, 0.2)",
+      },
     },
   },
   plugins: [],

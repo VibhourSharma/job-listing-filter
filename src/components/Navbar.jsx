@@ -1,11 +1,26 @@
-const Navbar = ({ keywords }) => {
-  console.log(keywords);
+const Navbar = ({ keywords, deleteKeyword, clearAll }) => {
   return (
     <>
       <div>
-        {keywords.map((key, id) => {
-          return <button key={id}>{key}</button>;
-        })}
+        <ul>
+          {keywords.map((key, id) => {
+            return (
+              <li key={id}>
+                {key}
+                <button onClick={() => deleteKeyword(key)}>
+                  <img
+                    src="../images/icon-remove.svg"
+                    alt="x"
+                    className="bg-primary"
+                  />
+                </button>
+              </li>
+            );
+          })}
+          <a href="#" onClick={() => clearAll()}>
+            Clear
+          </a>
+        </ul>
       </div>
     </>
   );
