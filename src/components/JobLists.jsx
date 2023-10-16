@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import JobCard from "./JobCard";
 
 const JobLists = ({ data, setKeywords, keywords }) => {
-  console.log(data);
-  console.log(keywords);
   const [filteredData, setFilteredData] = useState([]);
 
   const modifiedData = () => {
@@ -29,7 +27,7 @@ const JobLists = ({ data, setKeywords, keywords }) => {
   }, [keywords]);
 
   return (
-    <div className="flex flex-col items-center bg-filtertable">
+    <div className="flex flex-col items-center bg-filtertable min-h-screen">
       {filteredData.map((jobs) => (
         <JobCard key={jobs.id} data={jobs} setKeywords={setKeywords} />
       ))}
