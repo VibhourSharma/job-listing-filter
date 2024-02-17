@@ -6,11 +6,11 @@ const JobLists = ({ data, setKeywords, keywords }) => {
 
   const modifiedData = () => {
     if (keywords.length > 0) {
-      const newData = filteredData.filter((job) => {
+      const newData = data.filter((job) => {
         return keywords.every((key) => {
           return (
-            job.role == key ||
-            job.level == key ||
+            job.role === key ||
+            job.level === key ||
             job.languages.includes(key) ||
             job.tools.includes(key)
           );
